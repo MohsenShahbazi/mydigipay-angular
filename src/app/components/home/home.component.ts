@@ -31,10 +31,21 @@ export class HomeComponent implements OnInit {
   }
 
   filter() {
-    this.coins = this.coins.filter((item) => {
+    /*this.coins = this.coins.filter((item) => {
       item.symbol == this.currenciesForm.controls['filterBy'].value
-    })
+    })*/
+
+    if (this.currenciesForm.controls['filterBy'].value != '')
+      this.itemsToDisplay = this.itemsToDisplay.filter((item: any) => {
+        return item.name = this.currenciesForm.controls['filterBy'].value;
+      });
+    else {
+      this.getCurrencies();
+    }
+
+
   }
+
 
   ngOnInit(): void {
     this.initCurrencyForm();
