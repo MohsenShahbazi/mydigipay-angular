@@ -10,7 +10,14 @@ const routes: Routes = [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent, pathMatch: 'full'}
     ]
-  }
+  },
+
+
+  /*      This is example for Lazy loading Routing Modules      */
+  /*{
+    path: 'example/',
+    loadChildren: () => import('example.module').then(m => m.exampleModule)
+  },*/
 ];
 
 @NgModule({

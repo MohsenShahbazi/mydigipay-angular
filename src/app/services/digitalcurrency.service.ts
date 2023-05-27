@@ -1,9 +1,14 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {BaseService} from "./base.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class DigitalcurrencyService {
+export class DigitalCurrencyService extends BaseService {
 
-  constructor() { }
+  constructor(http: HttpClient) {
+    super(http);
+    this.rout = 'cryptocurrency/';
+  }
 }
